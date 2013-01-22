@@ -16,6 +16,7 @@ Drive::Drive() {
 }
 // Called just before this Command runs the first time
 void Drive::Initialize() {
+	printf ("done!\n");
 	
 }
 // Called repeatedly when this Command is scheduled to run

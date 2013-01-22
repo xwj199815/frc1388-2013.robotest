@@ -34,7 +34,6 @@ void Robot::AutonomousInit() {
 	if (autonomousCommand != NULL)
 		autonomousCommand->Start();
 }
-	
 void Robot::AutonomousPeriodic() {
 	Scheduler::GetInstance()->Run();
 }
