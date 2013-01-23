@@ -13,57 +13,33 @@ Children:
     - Name: Robot Drive 2 1
       Base: Robot Drive 2
       Children:
-      - Name: right motor
-        Base: Speed Controller
-        Children: []
-        Properties:
-          Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-            choices: &id001 ['1', '2']
-            default: '1'
-            name: Output Module (Digital)
-            validators: &id002 [PWMOutput]
-            value: '1'
-          Type: !!robotbuilder.data.properties.ChoicesProperty
-            choices: &id003 [Victor, Jaguar, Talon]
-            default: Victor
-            name: Type
-            validators: null
-            value: Victor
-          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-            choices: &id004 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-            default: '1'
-            name: Output Channel (PWM)
-            validators: &id005 [PWMOutput]
-            value: '1'
       - Name: left motor
-        Base: Speed Controller
+        Base: CAN Jaguar
         Children: []
         Properties:
-          Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+            choices: &id001 ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+            default: '2'
+            name: CAN ID
+            validators: &id002 [CANID]
+            value: '5'
+      - Name: right motor
+        Base: CAN Jaguar
+        Children: []
+        Properties:
+          CAN ID: !!robotbuilder.data.properties.ChoicesProperty
             choices: *id001
-            default: '1'
-            name: Output Module (Digital)
+            default: '2'
+            name: CAN ID
             validators: *id002
-            value: '1'
-          Type: !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id003
-            default: Victor
-            name: Type
-            validators: null
-            value: Victor
-          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id004
-            default: '1'
-            name: Output Channel (PWM)
-            validators: *id005
-            value: '2'
+            value: '4'
       Properties:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.5,
           name: Sensitivity, validators: null, value: 0.5}
         Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
           name: Safety Enabled, validators: null, value: false}
         Left Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Left Motor Inverted, validators: null, value: false}
+          name: Left Motor Inverted, validators: null, value: true}
         Right Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 1
           name: Right Motor
@@ -94,20 +70,20 @@ Children:
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id006 ['1', '2', '3', '4']
+        choices: &id003 ['1', '2', '3', '4']
         default: 1
         name: Number
-        validators: &id007 [Joystick]
+        validators: &id004 [Joystick]
         value: '2'
   - Name: RightJoystick
     Base: Joystick
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id006
+        choices: *id003
         default: 1
         name: Number
-        validators: *id007
+        validators: *id004
         value: '3'
   Properties: {}
 - Name: Commands
@@ -126,7 +102,7 @@ Children:
     Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: None}
+        name: Requires, type: Subsystem, validators: null, value: Drive train}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
