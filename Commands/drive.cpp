@@ -22,9 +22,10 @@ void Drive::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void Drive::Execute() { 
-	RobotMap::drivetrainRobotDrive21->TankDrive(
-			Robot::oi->getLeftJoystick()->GetY(),
-			Robot::oi->getRightJoystick()->GetY());
+	RobotMap::drivetrainRobotDrive41->MecanumDrive_Cartesian(
+			Robot::oi->getJoystick()->GetX(),
+			Robot::oi->getJoystick()->GetY(),
+			Robot::oi->getJoystick()->GetZ());
 	printf ("Execution done!\n");
 }
 // Make this return true when this Command no longer needs to run execute()
