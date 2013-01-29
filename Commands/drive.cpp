@@ -25,8 +25,10 @@ void Drive::Execute() {
 	RobotMap::drivetrainRobotDrive41->MecanumDrive_Cartesian(
 			Robot::oi->getJoystick()->GetX(),
 			Robot::oi->getJoystick()->GetY(),
-			Robot::oi->getJoystick()->GetZ());
-	printf ("Execution done!\n");
+			Robot::oi->getJoystick()->GetZ(),
+			RobotMap::drivetrainGyro->GetAngle());
+			
+		printf ("Execution done!\n");
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Drive::IsFinished() {
