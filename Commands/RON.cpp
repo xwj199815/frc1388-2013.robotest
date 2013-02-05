@@ -8,7 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "RON.h"
-OI oi;
 RON::RON() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -26,7 +25,7 @@ void RON::Execute() { RobotMap::lightsRedspike->Set(Relay::kForward);
 // Make this return true when this Command no longer needs to run execute()
 bool RON::IsFinished() {
 	
-	if (oi.Getredbutton() )
+	if (Robot::oi->Getredbutton() )
 		return false;
 	else
 	{

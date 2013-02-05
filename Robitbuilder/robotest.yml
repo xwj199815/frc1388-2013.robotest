@@ -230,15 +230,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Gyroffdrive
-    Base: Command
-    Children: []
-    Properties:
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Drive train}
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Gyrondrive
+  - Name: Drive
     Base: Command
     Children: []
     Properties:
@@ -274,5 +266,5 @@ Properties:
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
   Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Documents
-      and Settings\zbraun\NetBeansProjects', extension: null, folder: true, name: Java Project Directory,
+      and Settings\jtechau\NetBeansProjects', extension: null, folder: true, name: Java Project Directory,
     validators: null, value: 'C:\Documents and Settings\jtechau\NetBeansProjects'}
