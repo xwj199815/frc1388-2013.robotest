@@ -17,25 +17,25 @@ RON::RON() {
 }
 // Called just before this Command runs the first time
 void RON::Initialize() {
+	RobotMap::lightsRedspike->Set(Relay::kForward);
 }
 // Called repeatedly when this Command is scheduled to run
-void RON::Execute() { RobotMap::lightsRedspike->Set(Relay::kForward);
-//	 RobotMap::lightsRedspike::Set(lightsRedspike::kForwardOnly);
+void RON::Execute() { 
+//	 RobotMap::lightsRedspike::Set(lightsRedspike::kForward);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool RON::IsFinished() {
 	
-	if (Robot::oi->Getredbutton() )
+	if (Robot::oi->Getredbutton() ) 
 		return false;
 	else
 	{
-		RobotMap::lightsRedspike->Set(Relay::kOff);
 		return true;
 	}
 }
 // Called once after isFinished returns true
 void RON::End() {
-	
+	RobotMap::lightsRedspike->Set(Relay::kOff);
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
