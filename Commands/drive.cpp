@@ -17,8 +17,7 @@ Drive::Drive() {
 }
 void Drive::Initialize() {
 // Called just before this Command runs the first
-	printf ("Initialization done!\n"); 
-	
+	 
 }
 // Called repeatedly when this Command is scheduled to run
 void Drive::Execute() { 
@@ -28,16 +27,13 @@ void Drive::Execute() {
 			Robot::oi->getJoystick()->GetZ(),
 			RobotMap::drivetrainGyro->GetAngle());
 			
-		printf ("Execution done!\n");
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Drive::IsFinished() {
-	printf ("I IsFinished being done!");
 	return false;
 }
 // Called once after isFinished returns true
 void Drive::End() {
-	printf ("the end is neigh!");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
