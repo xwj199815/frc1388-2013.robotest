@@ -50,5 +50,11 @@ void RON::End() {
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void RON::Interrupted() {
+void RON::Interrupted() {RobotMap::lightsRedspike->Set(Relay::kOff);
+	printf("interrupted");
+}
+
+void RON::Cancel() {
+	RobotMap::lightsRedspike->Set(Relay::kOff);
+	printf("cancel");
 }
