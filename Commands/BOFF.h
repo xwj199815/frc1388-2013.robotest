@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef RON_H
-#define RON_H
+#ifndef BOFF_H
+#define BOFF_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,9 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class RON: public Command {
+class BOFF: public Command {
 public:
-	RON();
+	BOFF();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
