@@ -10,6 +10,10 @@
 #include "AutonomousCommand.h"
 #include "../Commands/RON.h"
 #include "../Commands/ROFF.h"
+#include "../Commands/WON.h"
+#include "../Commands/WOFF.h"
+#include "../Commands/BON.h"
+#include "../Commands/BOFF.h"
 
 AutonomousCommand::AutonomousCommand() {
 	// Use requires() here to declare subsystem dependencies
@@ -22,17 +26,29 @@ AutonomousCommand::AutonomousCommand() {
 void AutonomousCommand::Initialize() {
 	timer.Reset();
 	timer.Start();
-	time = timer.Get();
-	timer.Get();
 	
 	
 }
 // Called repeatedly when this Command is scheduled to run
 void AutonomousCommand::Execute() {
+	time = timer.Get();
 	if(time < 1)
 		(new RON())->Start();
+	
 	if((time > 1) && (time < 2) )
-		(new ROFF ())->Start();
+		(new ROFF())->Start();
+	
+	if((time > 1.05) && (time < 2) )
+		(new WON ())->Start();
+	
+	if((time > 2) && (time < 3) )
+		(new WOFF ())->Start();
+	
+	if((time > 2.05) && (time < 3) )
+		(new BON ())->Start();
+	
+	if((time > 3.05) && (time < 4) )
+		(new BOFF ())->Start();
 }
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousCommand::IsFinished() {
