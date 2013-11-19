@@ -17,22 +17,26 @@ ROFF::ROFF() {
 }
 // Called just before this Command runs the first time
 void ROFF::Initialize() {
+
 	RobotMap::lightsRedspike->Set(Relay::kOff);
-	
+	printf ("initialize");
 }
 // Called repeatedly when this Command is scheduled to run
 void ROFF::Execute() {
-	
+	printf("execute");
 }
 // Make this return true when this Command no longer needs to run execute()
 bool ROFF::IsFinished() {
 	return false;
+	printf("isfinished");
+	
 }
 // Called once after isFinished returns true
 void ROFF::End() {
-	
+	printf("end");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void ROFF::Interrupted() {
+	printf("interrupted");
 }
