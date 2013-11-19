@@ -17,7 +17,6 @@ ROFF::ROFF() {
 }
 // Called just before this Command runs the first time
 void ROFF::Initialize() {
-
 	RobotMap::lightsRedspike->Set(Relay::kOff);
 	printf ("initialize");
 }
