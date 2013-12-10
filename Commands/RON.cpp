@@ -18,26 +18,22 @@ RON::RON() {
 // Called just before this Command runs the first time
 void RON::Initialize() {
 	RobotMap::lightsRedspike->Set(Relay::kForward);
-	printf("intialize");
+	
 }
 // Called repeatedly when this Command is scheduled to run
 void RON::Execute() {
-	printf("execute");
 }
 // Make this return true when this Command no longer needs to run execute()
 bool RON::IsFinished() {
 	
 	return false;
-	printf("is finsihed");
 	
 }
 // Called once after isFinished returns true
 void RON::End() {
-	printf("ending");
 	
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void RON::Interrupted() {
-	printf("ohhp u got interrupted"); 
 }

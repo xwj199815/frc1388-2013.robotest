@@ -18,7 +18,8 @@ inbackfinger::inbackfinger() {
 // Called just before this Command runs the first time
 void inbackfinger::Initialize() {
 //start the back finger going forward please
-	RobotMap::fingersVictor4->Set(1.0);
+	RobotMap::fingersVictor4->Set(-1.0);
+	
 }
 // Called repeatedly when this Command is scheduled to run
 void inbackfinger::Execute() {
